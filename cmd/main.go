@@ -15,7 +15,8 @@ func Probe() {
 
 	devices, err := client.FetchDevices()
 	if err != nil {
-		panic(err)
+		logrus.Errorf("Error occured when fetching devices: %s", err)
+		return
 	}
 
 	for _, d := range devices {
