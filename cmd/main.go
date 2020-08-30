@@ -16,6 +16,7 @@ func Probe() {
 	devices, err := client.FetchDevices()
 	if err != nil {
 		logrus.Errorf("Failed fetching devices from Nature Remo: %s", err)
+		return
 	}
 
 	for _, d := range devices {
